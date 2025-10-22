@@ -14,7 +14,6 @@ export default function ErrorPage() {
       </p>
       <button
         onClick={() => {
-          revalidatePath("/");
           redirect("/");
         }}
       >
