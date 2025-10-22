@@ -1,8 +1,8 @@
 "use client";
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function ErrorPage() {
+  const router = useRouter();
   return (
     <>
       <h1>An error has occured!</h1>
@@ -14,7 +14,7 @@ export default function ErrorPage() {
       </p>
       <button
         onClick={() => {
-          redirect("/");
+          router.push("/");
         }}
       >
         Return to main page
