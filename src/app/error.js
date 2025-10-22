@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function ErrorPage() {
   const router = useRouter();
@@ -12,13 +12,7 @@ export default function ErrorPage() {
         <br />
         Please Sign in or Sign up from the main site
       </p>
-      <button
-        onClick={() => {
-          router.push("/");
-        }}
-      >
-        Return to main page
-      </button>
+      <Link href={"/"}>Return to main page</Link>
     </>
   );
 }
