@@ -1,6 +1,8 @@
 "use client";
 
 import { LoginButton } from "@/components/LoginButton";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export default function ErrorPage() {
   return (
@@ -10,9 +12,16 @@ export default function ErrorPage() {
         You may not have been logged in, and need to do so in order to vote on
         posts.
         <br />
-        Please Sign in or Sign up below
+        Please Sign in or Sign up from the main site
       </p>
-      <LoginButton />
+      <button
+        onClick={() => {
+          revalidatePath("/");
+          redirect("/");
+        }}
+      >
+        Return to main page
+      </button>
     </>
   );
 }
