@@ -2,7 +2,6 @@
 import Link from "next/link";
 
 export default function ErrorPage() {
-  const router = useRouter();
   return (
     <>
       <h1>An error has occured!</h1>
